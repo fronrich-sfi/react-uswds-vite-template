@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import {
   Header,
   NavMenuButton,
@@ -9,7 +9,7 @@ import NavLink, { NavLinkProps } from "./NavLink";
 import useAppBar from "./useAppBar";
 
 interface AppBarProps {
-  header: string;
+  header: ReactNode;
   navLinks: NavLinkProps[];
 }
 
@@ -17,7 +17,7 @@ const AppBar: FC<AppBarProps> = ({ header, navLinks }) => {
   const { expanded, handleToggleExpand } = useAppBar();
   return (
     <>
-      <Header basic={true} showMobileOverlay={expanded}>
+      <Header extended showMobileOverlay={expanded}>
         <div className="usa-nav-container">
           <div className="usa-navbar">
             <Title>{header}</Title>

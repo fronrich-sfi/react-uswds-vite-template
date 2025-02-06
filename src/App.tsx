@@ -10,8 +10,8 @@ const App = () => {
   const { links } = useApp();
   return (
     <>
-      <AppBar header="Boilerplate Template" navLinks={links} />
-      <GridContainer containerSize="desktop-lg">
+      <AppBar header="My Project" navLinks={links} />
+      <GridContainer containerSize="desktop">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Error />} />
