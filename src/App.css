@@ -1,0 +1,4 @@
+/* uswds utility classes */
+@import "@trussworks/react-uswds/lib/index.css";
+/* uswds component classes */
+@import "@trussworks/react-uswds/lib/uswds.css";
