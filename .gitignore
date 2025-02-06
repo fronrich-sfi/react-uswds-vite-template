@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 #lockfiles
+package-lock.json
 bun.lockb
