@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "5.66.0",
-    "@trussworks/react-uswds": "9.1.0",
+    "@trussworks/react-uswds": "^9.1.0",
     "@types/jest": "29.5.14",
     "@uswds/uswds": "3.11.0",
     "axios": "1.7.9",
@@ -20,6 +20,7 @@
     "jest": "29.7.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-hook-form": "^7.54.2",
     "react-router": "7.1.5",
     "recharts": "2.15.1"
   },
@@ -27,7 +28,7 @@
     "@eslint/js": "9.19.0",
     "@iconify/react": "^5.2.0",
     "@testing-library/react": "^16.2.0",
-    "@types/react": "19.0.8",
+    "@types/react": "^19.0.8",
     "@types/react-dom": "19.0.3",
     "@vitejs/plugin-react-swc": "3.5.0",
     "eslint": "9.19.0",

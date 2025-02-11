@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router";
 
 export interface NavLinkProps {
   label: string;
@@ -19,16 +20,16 @@ export interface NavLinkProps {
 
 const NavLink: FC<NavLinkProps> = ({ label, href, icon, newTab }) => {
   return (
-    <a
+    <Link
       target={newTab ? "_blank" : "_self"}
-      href={href}
+      to={href}
       key={href}
       className="usa-nav__link"
       style={{ display: "flex", gap: "0.25rem" }}
     >
       {icon && <Icon icon={icon} />}
       <span>{label}</span>
-    </a>
+    </Link>
   );
 };
 
