@@ -17,6 +17,7 @@ const useExampleServices = () => {
 
   interface GetRandomQuotesProps {
     numQuotes: number;
+    tags?: string[];
   }
 
   /**
@@ -26,10 +27,13 @@ const useExampleServices = () => {
    */
   const getRandomQuotes = async ({
     numQuotes,
+    tags,
   }: GetRandomQuotesProps): Promise<Quote[]> => {
     return (
       await axios.get(
-        `https://api.quotable.io/quotes/random?limit=${numQuotes}`
+        `https://api.quotable.io/quotes/random?limit=${numQuotes}${
+          tags && tags?.length > 0 && `tags=${tags.toString() ?? ""}`
+        }`
       )
     ).data;
   };

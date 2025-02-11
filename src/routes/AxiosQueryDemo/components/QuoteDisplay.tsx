@@ -1,11 +1,14 @@
-import { Card, CardBody, CardFooter, CardGroup } from "@trussworks/react-uswds";
+import { Button, CardGroup } from "@trussworks/react-uswds";
 import useRHFSubscription from "../../../hooks/ReactHookForm/useRFHSubscription";
 import useRandomQuotes from "../../../hooks/Tanstack/queries/useRandomQuotes";
 import { Icon } from "@iconify/react";
+import Tags from "./Tags";
+import QuoteCard from "./QuoteCard";
 
 const QuoteDisplay = () => {
-  const numQuotes = useRHFSubscription("num-quotes");
-  const { data, isLoading } = useRandomQuotes({ numQuotes });
+  const numQuotes: number = useRHFSubscription("num-quotes");
+  const tags: string[] = useRHFSubscription("tags");
+  const { data, isLoading, refetch } = useRandomQuotes({ numQuotes, tags });
 
   if (isLoading) {
     return (
@@ -18,14 +21,11 @@ const QuoteDisplay = () => {
   return (
     <>
       <h2>Showing {numQuotes} Quotes</h2>
+      <Button onClick={() => refetch()}>Refresh</Button>
+      <Tags tags={tags} />
       <CardGroup>
         {data?.map((quote) => (
-          <Card>
-            <CardBody>
-              <i>{quote.content}</i>
-            </CardBody>
-            <CardFooter>-{quote.author}</CardFooter>
-          </Card>
+          <QuoteCard quote={quote} />
         ))}
       </CardGroup>
     </>
